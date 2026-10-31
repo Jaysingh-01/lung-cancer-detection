@@ -1,0 +1,7 @@
+[server]
+headless = true
+
+[browser]
+# The app promises that nothing is transmitted; Streamlit's default telemetry
+# would contradict that.
+gatherUsageStats = false
