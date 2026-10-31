@@ -1,0 +1,565 @@
+{
+  "model_name": "logistic_regression",
+  "calibration_method": "sigmoid",
+  "feature_names": [
+    "GENDER",
+    "AGE",
+    "SMOKING",
+    "ALCOHOL_CONSUMING",
+    "PEER_PRESSURE",
+    "YELLOW_FINGERS",
+    "ANXIETY",
+    "CHRONIC_DISEASE",
+    "ALLERGY",
+    "FATIGUE",
+    "WHEEZING",
+    "COUGHING",
+    "SHORTNESS_OF_BREATH",
+    "SWALLOWING_DIFFICULTY",
+    "CHEST_PAIN"
+  ],
+  "threshold": 0.6714864444405114,
+  "operating_point": {
+    "threshold": 0.671486,
+    "strategy": "target_sensitivity",
+    "achieved_sensitivity": 0.953782,
+    "achieved_specificity": 0.763158,
+    "target": 0.95,
+    "rationale": "Lowest-alarm threshold that still detects at least 95% of cases. Chosen because a missed cancer costs far more than a follow-up test."
+  },
+  "metrics": {
+    "cross_validated": {
+      "point": {
+        "threshold": 0.671486,
+        "counts": {
+          "tn": 29,
+          "fp": 9,
+          "fn": 11,
+          "tp": 227
+        },
+        "sensitivity": 0.953782,
+        "specificity": 0.763158,
+        "ppv": 0.961864,
+        "npv": 0.725,
+        "ppv_adjusted": 0.039088,
+        "npv_adjusted": 0.999389,
+        "reference_prevalence": 0.01,
+        "positive_likelihood_ratio": 4.027077,
+        "negative_likelihood_ratio": 0.060562,
+        "balanced_accuracy": 0.85847,
+        "f1": 0.957806,
+        "mcc": 0.701741,
+        "accuracy": 0.927536,
+        "prevalence": 0.862319,
+        "roc_auc": 0.94383,
+        "pr_auc": 0.990914,
+        "brier": 0.06554,
+        "expected_calibration_error": 0.063411
+      },
+      "ci95": {
+        "sensitivity": [
+          0.92437,
+          0.978992
+        ],
+        "specificity": [
+          0.631579,
+          0.894737
+        ],
+        "roc_auc": [
+          0.913202,
+          0.970809
+        ],
+        "pr_auc": [
+          0.985703,
+          0.995383
+        ]
+      }
+    },
+    "cross_validated_at_threshold_0.5": {
+      "threshold": 0.5,
+      "counts": {
+        "tn": 20,
+        "fp": 18,
+        "fn": 6,
+        "tp": 232
+      },
+      "sensitivity": 0.97479,
+      "specificity": 0.526316,
+      "ppv": 0.928,
+      "npv": 0.769231,
+      "ppv_adjusted": 0.020363,
+      "npv_adjusted": 0.999516,
+      "reference_prevalence": 0.01,
+      "positive_likelihood_ratio": 2.05789,
+      "negative_likelihood_ratio": 0.047899,
+      "balanced_accuracy": 0.750553,
+      "f1": 0.95082,
+      "mcc": 0.591089,
+      "accuracy": 0.913043,
+      "prevalence": 0.862319,
+      "roc_auc": 0.94383,
+      "pr_auc": 0.990914,
+      "brier": 0.06554,
+      "expected_calibration_error": 0.063411
+    },
+    "calibration_curve": [
+      {
+        "bin_lower": 0.0,
+        "bin_upper": 0.1,
+        "mean_predicted": 0.08689294194706121,
+        "observed_rate": 1.0,
+        "count": 1
+      },
+      {
+        "bin_lower": 0.1,
+        "bin_upper": 0.2,
+        "mean_predicted": 0.18803403570452049,
+        "observed_rate": 0.0,
+        "count": 3
+      },
+      {
+        "bin_lower": 0.2,
+        "bin_upper": 0.30000000000000004,
+        "mean_predicted": 0.26502516371972107,
+        "observed_rate": 0.5,
+        "count": 4
+      },
+      {
+        "bin_lower": 0.30000000000000004,
+        "bin_upper": 0.4,
+        "mean_predicted": 0.35223630961416585,
+        "observed_rate": 0.25,
+        "count": 12
+      },
+      {
+        "bin_lower": 0.4,
+        "bin_upper": 0.5,
+        "mean_predicted": 0.44950783086968954,
+        "observed_rate": 0.0,
+        "count": 6
+      },
+      {
+        "bin_lower": 0.5,
+        "bin_upper": 0.6000000000000001,
+        "mean_predicted": 0.5658635824070166,
+        "observed_rate": 0.16666666666666666,
+        "count": 6
+      },
+      {
+        "bin_lower": 0.6000000000000001,
+        "bin_upper": 0.7000000000000001,
+        "mean_predicted": 0.6555504262354801,
+        "observed_rate": 0.6153846153846154,
+        "count": 13
+      },
+      {
+        "bin_lower": 0.7000000000000001,
+        "bin_upper": 0.8,
+        "mean_predicted": 0.7619037564895224,
+        "observed_rate": 0.8947368421052632,
+        "count": 19
+      },
+      {
+        "bin_lower": 0.8,
+        "bin_upper": 0.9,
+        "mean_predicted": 0.8588334691526955,
+        "observed_rate": 0.8275862068965517,
+        "count": 29
+      },
+      {
+        "bin_lower": 0.9,
+        "bin_upper": 1.0,
+        "mean_predicted": 0.968234233878533,
+        "observed_rate": 0.994535519125683,
+        "count": 183
+      }
+    ],
+    "threshold_sweep": [
+      {
+        "threshold": 0.0,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "flagged": 276,
+        "missed_cases": 0
+      },
+      {
+        "threshold": 0.05,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "flagged": 276,
+        "missed_cases": 0
+      },
+      {
+        "threshold": 0.1,
+        "sensitivity": 0.9958,
+        "specificity": 0.0,
+        "flagged": 275,
+        "missed_cases": 1
+      },
+      {
+        "threshold": 0.15,
+        "sensitivity": 0.9958,
+        "specificity": 0.0,
+        "flagged": 275,
+        "missed_cases": 1
+      },
+      {
+        "threshold": 0.2,
+        "sensitivity": 0.9958,
+        "specificity": 0.0789,
+        "flagged": 272,
+        "missed_cases": 1
+      },
+      {
+        "threshold": 0.25,
+        "sensitivity": 0.9958,
+        "specificity": 0.1053,
+        "flagged": 271,
+        "missed_cases": 1
+      },
+      {
+        "threshold": 0.3,
+        "sensitivity": 0.9874,
+        "specificity": 0.1316,
+        "flagged": 268,
+        "missed_cases": 3
+      },
+      {
+        "threshold": 0.35,
+        "sensitivity": 0.9832,
+        "specificity": 0.2368,
+        "flagged": 263,
+        "missed_cases": 4
+      },
+      {
+        "threshold": 0.4,
+        "sensitivity": 0.9748,
+        "specificity": 0.3684,
+        "flagged": 256,
+        "missed_cases": 6
+      },
+      {
+        "threshold": 0.45,
+        "sensitivity": 0.9748,
+        "specificity": 0.4474,
+        "flagged": 253,
+        "missed_cases": 6
+      },
+      {
+        "threshold": 0.5,
+        "sensitivity": 0.9748,
+        "specificity": 0.5263,
+        "flagged": 250,
+        "missed_cases": 6
+      },
+      {
+        "threshold": 0.55,
+        "sensitivity": 0.9748,
+        "specificity": 0.5789,
+        "flagged": 248,
+        "missed_cases": 6
+      },
+      {
+        "threshold": 0.6,
+        "sensitivity": 0.9706,
+        "specificity": 0.6579,
+        "flagged": 244,
+        "missed_cases": 7
+      },
+      {
+        "threshold": 0.65,
+        "sensitivity": 0.9622,
+        "specificity": 0.7368,
+        "flagged": 239,
+        "missed_cases": 9
+      },
+      {
+        "threshold": 0.7,
+        "sensitivity": 0.937,
+        "specificity": 0.7895,
+        "flagged": 231,
+        "missed_cases": 15
+      },
+      {
+        "threshold": 0.75,
+        "sensitivity": 0.9076,
+        "specificity": 0.7895,
+        "flagged": 224,
+        "missed_cases": 22
+      },
+      {
+        "threshold": 0.8,
+        "sensitivity": 0.8655,
+        "specificity": 0.8421,
+        "flagged": 212,
+        "missed_cases": 32
+      },
+      {
+        "threshold": 0.85,
+        "sensitivity": 0.8319,
+        "specificity": 0.8684,
+        "flagged": 203,
+        "missed_cases": 40
+      },
+      {
+        "threshold": 0.9,
+        "sensitivity": 0.7647,
+        "specificity": 0.9737,
+        "flagged": 183,
+        "missed_cases": 56
+      },
+      {
+        "threshold": 0.95,
+        "sensitivity": 0.5798,
+        "specificity": 1.0,
+        "flagged": 138,
+        "missed_cases": 100
+      },
+      {
+        "threshold": 1.0,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "flagged": 0,
+        "missed_cases": 238
+      }
+    ],
+    "evaluation_protocol": "5-fold stratified cross-validation, out-of-fold predictions; model selected over 5 repeated splits; 2000 stratified bootstrap resamples for intervals."
+  },
+  "model_comparison": [
+    {
+      "model": "logistic_regression",
+      "calibration": "sigmoid",
+      "roc_auc_mean": 0.935847,
+      "roc_auc_std": 0.010551,
+      "brier_mean": 0.069846,
+      "ece_mean": 0.060171,
+      "note": "L2-regularised linear baseline; coefficients are log-odds ratios."
+    },
+    {
+      "model": "logistic_regression",
+      "calibration": "none",
+      "roc_auc_mean": 0.933414,
+      "roc_auc_std": 0.011551,
+      "brier_mean": 0.096619,
+      "ece_mean": 0.11339,
+      "note": "L2-regularised linear baseline; coefficients are log-odds ratios."
+    },
+    {
+      "model": "random_forest",
+      "calibration": "sigmoid",
+      "roc_auc_mean": 0.924746,
+      "roc_auc_std": 0.019476,
+      "brier_mean": 0.074339,
+      "ece_mean": 0.064895,
+      "note": "Depth and leaf size constrained deliberately: with a few hundred rows an unconstrained forest memorises the sample."
+    },
+    {
+      "model": "logistic_regression",
+      "calibration": "isotonic",
+      "roc_auc_mean": 0.924403,
+      "roc_auc_std": 0.017521,
+      "brier_mean": 0.070057,
+      "ece_mean": 0.04926,
+      "note": "L2-regularised linear baseline; coefficients are log-odds ratios."
+    },
+    {
+      "model": "random_forest",
+      "calibration": "none",
+      "roc_auc_mean": 0.923352,
+      "roc_auc_std": 0.018145,
+      "brier_mean": 0.092406,
+      "ece_mean": 0.142884,
+      "note": "Depth and leaf size constrained deliberately: with a few hundred rows an unconstrained forest memorises the sample."
+    },
+    {
+      "model": "random_forest",
+      "calibration": "isotonic",
+      "roc_auc_mean": 0.914916,
+      "roc_auc_std": 0.01405,
+      "brier_mean": 0.07272,
+      "ece_mean": 0.040147,
+      "note": "Depth and leaf size constrained deliberately: with a few hundred rows an unconstrained forest memorises the sample."
+    },
+    {
+      "model": "gradient_boosting",
+      "calibration": "sigmoid",
+      "roc_auc_mean": 0.905374,
+      "roc_auc_std": 0.039359,
+      "brier_mean": 0.080908,
+      "ece_mean": 0.07033,
+      "note": "Shallow boosted stumps; captures mild feature interactions."
+    },
+    {
+      "model": "gradient_boosting",
+      "calibration": "isotonic",
+      "roc_auc_mean": 0.898684,
+      "roc_auc_std": 0.042226,
+      "brier_mean": 0.07818,
+      "ece_mean": 0.045985,
+      "note": "Shallow boosted stumps; captures mild feature interactions."
+    },
+    {
+      "model": "gradient_boosting",
+      "calibration": "none",
+      "roc_auc_mean": 0.894449,
+      "roc_auc_std": 0.037582,
+      "brier_mean": 0.082871,
+      "ece_mean": 0.052191,
+      "note": "Shallow boosted stumps; captures mild feature interactions."
+    }
+  ],
+  "feature_importance": [
+    {
+      "feature": "FATIGUE",
+      "label": "Persistent fatigue",
+      "importance_mean": 0.033671,
+      "importance_std": 0.008438,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "SWALLOWING_DIFFICULTY",
+      "label": "Swallowing difficulty",
+      "importance_mean": 0.026587,
+      "importance_std": 0.008753,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "CHRONIC_DISEASE",
+      "label": "Chronic disease history",
+      "importance_mean": 0.026519,
+      "importance_std": 0.007277,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "COUGHING",
+      "label": "Persistent cough",
+      "importance_mean": 0.025297,
+      "importance_std": 0.006219,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "ALCOHOL_CONSUMING",
+      "label": "Alcohol consumption",
+      "importance_mean": 0.022953,
+      "importance_std": 0.007431,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "ALLERGY",
+      "label": "Allergic history",
+      "importance_mean": 0.021628,
+      "importance_std": 0.008786,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "YELLOW_FINGERS",
+      "label": "Yellow fingers",
+      "importance_mean": 0.013571,
+      "importance_std": 0.004711,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "PEER_PRESSURE",
+      "label": "Peer pressure",
+      "importance_mean": 0.013138,
+      "importance_std": 0.004167,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "SMOKING",
+      "label": "Smoking history",
+      "importance_mean": 0.008387,
+      "importance_std": 0.002719,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "ANXIETY",
+      "label": "Anxiety",
+      "importance_mean": 0.005711,
+      "importance_std": 0.003368,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "WHEEZING",
+      "label": "Wheezing",
+      "importance_mean": 0.002976,
+      "importance_std": 0.002658,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "GENDER",
+      "label": "Sex",
+      "importance_mean": 0.001812,
+      "importance_std": 0.001696,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "AGE",
+      "label": "Age (years)",
+      "importance_mean": 0.00152,
+      "importance_std": 0.001856,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "SHORTNESS_OF_BREATH",
+      "label": "Shortness of breath",
+      "importance_mean": 0.000868,
+      "importance_std": 0.001559,
+      "scoring": "roc_auc"
+    },
+    {
+      "feature": "CHEST_PAIN",
+      "label": "Chest pain",
+      "importance_mean": 0.000735,
+      "importance_std": 0.002505,
+      "scoring": "roc_auc"
+    }
+  ],
+  "reference_patient": {
+    "GENDER": 1,
+    "AGE": 62,
+    "SMOKING": 2,
+    "ALCOHOL_CONSUMING": 2,
+    "PEER_PRESSURE": 2,
+    "YELLOW_FINGERS": 2,
+    "ANXIETY": 1,
+    "CHRONIC_DISEASE": 2,
+    "ALLERGY": 2,
+    "FATIGUE": 2,
+    "WHEEZING": 2,
+    "COUGHING": 2,
+    "SHORTNESS_OF_BREATH": 2,
+    "SWALLOWING_DIFFICULTY": 1,
+    "CHEST_PAIN": 2
+  },
+  "data_report": {
+    "n_rows_raw": 309,
+    "n_rows_used": 276,
+    "n_duplicates_removed": 33,
+    "n_positive": 238,
+    "n_negative": 38,
+    "prevalence": 0.862319,
+    "age_min": 21,
+    "age_max": 87,
+    "warnings": [
+      "Removed 33 exact duplicate rows. Keeping them would leak identical records across CV folds.",
+      "Only 276 rows available. Every metric below carries a wide confidence interval; treat point estimates as indicative.",
+      "Only 38 negative cases. Specificity is estimated from a very small denominator and is the least reliable metric reported.",
+      "Dataset prevalence is 86.2%, far from any realistic screening population (~1-2%). PPV/NPV computed directly on this data do not transfer; use prevalence-adjusted values."
+    ]
+  },
+  "provenance": {
+    "trained_at_utc": "2026-08-31T07:30:23+00:00",
+    "data_path": "data/survey_lung_cancer.csv",
+    "data_fingerprint_sha256_16": "71d138cb33c5f690",
+    "n_training_rows": 276,
+    "random_state": 42,
+    "python_version": "3.14.4",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "scikit_learn_version": "1.7.2",
+    "numpy_version": "2.5.2",
+    "pandas_version": "2.3.3",
+    "joblib_version": "1.5.3",
+    "selection_metric": "mean cross-validated ROC-AUC"
+  }
+}
